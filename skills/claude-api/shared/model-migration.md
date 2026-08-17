@@ -1005,7 +1005,7 @@ The added tool must already be declared in `tools[]` with `"defer_loading": True
 
 **Effort: the full ladder, and where to start.** Claude Opus 5 supports all five levels — `low`, `medium`, `high`, `xhigh`, `max` — with no beta header. The API default is `high`.
 
-- **Start at `high` (the API default), then sweep down.** `low` and `medium` are unusually effective on this model — strong quality at a fraction of the tokens and latency on many workloads — so treat them as the primary cost/latency lever and reserve `high` and above for tasks where your evals show a quality difference. Effort defaults carried over from a prior model are usually not the right setting here; run a fresh sweep.
+- **Start at `high` (the API default), then sweep down.** `low` and `medium` are unusually effective on this model — strong quality at a fraction of the tokens and latency on many workloads — so treat them as the primary cost/latency lever and reserve `xhigh` and above for tasks where your evals show a quality difference. Effort defaults carried over from a prior model are usually not the right setting here; run a fresh sweep.
 - **`xhigh` and `max` are for measured wins, not a starting point.** `max` is the top tier for the deepest reasoning and worth testing where capability matters more than spend, but it can show diminishing returns and overthink simpler tasks.
 
 At `xhigh` or `max`, **set a large `max_tokens`** so the model has room to think and act across tool calls and subagents. Start at 64K and tune.
